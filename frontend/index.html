@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encurtador de URL</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { padding: 0.5rem; margin: 0.5rem 0; width: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Encurtador de URL</h1>
+  <input type="text" id="longUrl" placeholder="Cole aqui a URL longa" />
+  <button onclick="encurtar()">Encurtar</button>
+  <p id="resultado"></p>
+
+  <script>
+    async function encurtar() {
+      const longUrl = document.getElementById('longUrl').value;
+      const resposta = await fetch('http://localhost:5000/api/shorten', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ longUrl })
+      });
+      const data = await resposta.json();
+      document.getElementById('resultado').innerText = `URL curta: ${data.shortUrl}`;
+    }
+  </script>
+</body>
+</html>
