@@ -13,7 +13,7 @@
   <h1>Encurtador de URL</h1>
   <input type="text" id="longUrl" placeholder="Cole aqui a URL longa" />
   <button onclick="encurtar()">Encurtar</button>
-  <p id="resultado"></p>
+  <a id="resultado"></a>
 
   <script>
     async function encurtar() {
@@ -24,7 +24,10 @@
         body: JSON.stringify({ longUrl })
       });
       const data = await resposta.json();
-      document.getElementById('resultado').innerText = `URL curta: ${data.shortUrl}`;
+      
+    document.getElementById('resultado').innerText = `URL curta: ${data.shortUrl}`;
+    document.getElementById('resultado').href = data.shortUrl;
+    
     }
   </script>
 </body>
