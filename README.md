@@ -1,12 +1,11 @@
 # 🔗 EncurtadorURL
 
 Codando um encurtador de URL simples e funcional.
-
-🧠 Inspiração 
+Inspiração 
 
 Esse projeto foi criado com foco em aprendizado de backend.
 
-🌐 O que é esse projeto?
+O que é esse projeto?
 
 É um encurtador de URL. Ele transforma uma URL longa (tipo https://www.meusite.com/pagina-completa-com-parametros) em uma URL curta (tipo http://localhost:5000/abc123). 
 
@@ -24,28 +23,28 @@ Quando alguém visita essa URL curta, é redirecionado pra URL original.
 
 ---
 
-## 📌 Lógica de Funcionamento
+## Lógica de Funcionamento
 
 - **Input:** URL longa → **Output:** URL curta (criação)
 - **Input:** URL curta no navegador → Redireciona para a URL original
 
 ---
 
-## 🔑 Chave de Redirecionamento
+## Chave de Redirecionamento
 
 Cada URL curta é representada por uma **chave** (`id`), que atua como identificador único para a URL original.
 
 ---
 
-## 🚀 Funcionalidade MVP (Mínimo Produto Viável)
+## Funcionalidade MVP (Mínimo Produto Viável)
 
-- ✅ Criar URL curta a partir de uma URL longa
-- ✅ Redirecionar da URL curta para a URL original
-- ⚠️ Sem autenticação ou painel administrativo (por enquanto)
+-  Criar URL curta a partir de uma URL longa
+-  Redirecionar da URL curta para a URL original
+- ⚠ Sem autenticação ou painel administrativo (por enquanto)
 
 ---
 
-## ⚙️ Armazenamento das URLs
+## ⚙ Armazenamento das URLs
 
 Inicialmente, seria ideal usar um **HashMap** para buscas rápidas:
 
@@ -54,7 +53,7 @@ Inicialmente, seria ideal usar um **HashMap** para buscas rápidas:
 Mas o problema:  
 ❌ **HashMap é volátil** (in-memory) → dados se perdem quando o servidor reinicia.
 
-### ✅ Solução:
+###  Solução:
 
 - **armazenamento escolhido:** um arquivo json para simplicidade
 - Alternativas:
